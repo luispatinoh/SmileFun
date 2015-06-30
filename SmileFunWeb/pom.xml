@@ -50,6 +50,12 @@
 
     <dependencies>
         <dependency>
+            <groupId>Connection</groupId>
+            <artifactId>ConnectionClasses</artifactId>
+            <version>1.0</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-api</artifactId>
             <version>7.0</version>
