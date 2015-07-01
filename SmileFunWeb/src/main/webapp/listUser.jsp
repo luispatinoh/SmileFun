@@ -23,15 +23,15 @@
         <tbody>
             <c:forEach items="${users}" var="user">
                 <tr>
-                    <td><c:out value="${user.userid}" /></td>
+                    <td><c:out value="${user.userId}" /></td>
                     <td><c:out value="${user.firstName}" /></td>
                     <td><c:out value="${user.lastName}" /></td>
                     <%/*
                     <td><fmt:formatDate pattern="yyyy-MMM-dd" value="${user.dob}" /></td>
                     */%>
                     <td><c:out value="${user.email}" /></td>
-                    <td><a href="UsuarioController?action=edit&userId=<c:out value="${user.userid}"/>">Update</a></td>
-                    <td><a href="UsuarioController?action=delete&userId=<c:out value="${user.userid}"/>">Delete</a></td>
+                    <td><a href="UsuarioController?action=edit&userId=<c:out value="${user.userId}"/>">Update</a></td>
+                    <td><a href="UsuarioController?action=delete&userId=<c:out value="${user.userId}"/>">Delete</a></td>
                 </tr>
             </c:forEach>
         </tbody>

@@ -1,7 +1,7 @@
 package org.glassfish.servlet.multipart_war;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+//import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -61,7 +61,7 @@ public class UsuarioController extends HttpServlet {
             e.printStackTrace();
         }*/
         user.setEmail(request.getParameter("email"));
-        String userid = request.getParameter("userid");
+        String userid = request.getParameter("userId");
         if(userid == null || userid.isEmpty())
         {
             dao.insertar(user);
