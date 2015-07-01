@@ -16,6 +16,6 @@
          <input value="upload" type="submit"/>
          <input type="reset"/> <br/>
        </form>
-       <jsp:forward page="/UserController?action=listUser" />
+       <jsp:forward page="/UsuarioController?action=listUser" />
     </body>
 </html>

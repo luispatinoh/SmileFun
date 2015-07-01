@@ -5,12 +5,12 @@
     </welcome-file-list>
     <servlet>
         <description></description>
-        <display-name>UserController</display-name>
-        <servlet-name>UserController</servlet-name>
-        <servlet-class>com.daniel.controller.UserController</servlet-class>
+        <display-name>UsuarioController</display-name>
+        <servlet-name>UsuarioController</servlet-name>
+        <servlet-class>org.glassfish.servlet.multipart_war.UsuarioController</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>UserController</servlet-name>
-        <url-pattern>/UserController</url-pattern>
+        <servlet-name>UsuarioController</servlet-name>
+        <url-pattern>/UsuarioController</url-pattern>
     </servlet-mapping>
 </web-app>
