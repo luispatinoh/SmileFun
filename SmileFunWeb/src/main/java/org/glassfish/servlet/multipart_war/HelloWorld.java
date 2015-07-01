@@ -37,23 +37,22 @@ public class HelloWorld extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        
-        
+
         String sql = "SELECT user, password FROM login";
-        
+
         MySQLConnection sqlcon = MySQLConnection.getInstance();
         sqlcon.connect();
-        
+
         ResultSet rs = sqlcon.executeQuery(sql);
         String user = "";
         String password = "";
-        
+
         try {
-            while(rs.next()){
+            while (rs.next()) {
                 //Retrieve by column name
                 user = rs.getString("user");
                 password = rs.getString("password");
-                
+
                 //Display values
                 ////System.out.println(", Password: " + password);
             }
@@ -67,8 +66,7 @@ public class HelloWorld extends HttpServlet {
             }
             sqlcon.close();
         }
-        
-        
+
         try {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
