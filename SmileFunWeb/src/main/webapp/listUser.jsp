@@ -5,10 +5,16 @@
 
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>Smile Fun</title>
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
+<script src="js/modernizr.custom.70736.js"></script>
+<noscript><link rel="stylesheet" type="text/css" href="css/noJS.css"/></noscript>
+<!--[if lte IE 7]><style>.main{display:none;} .support-note .note-ie{display:block;}</style><![endif]-->
 
-<link href="css/newcss.css" rel="stylesheet" type="text/css"/>
-<title>Muestra todos los usuarios</title>
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
 </head>
 <body>
     <table border=1>
