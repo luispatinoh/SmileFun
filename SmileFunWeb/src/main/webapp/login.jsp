@@ -52,12 +52,12 @@
 
                 <div class="centered" style="width:400px">
 
-                    <form class="pure-form">
+                    <form method="POST" action='LoginController' name="frmLogin" class="pure-form">
                         <fieldset class="pure-group">
                             <label>Ingrese sus datos</label>
                             <br/>
                             <br/>
-                            <input type="text" class="pure-input-1-2" placeholder="Username" name="logId">
+                            <input type="text" class="pure-input-1-2" placeholder="Username" name="user">
                             <input type="text" class="pure-input-1-2" placeholder="Password" name="password">
                         </fieldset>
 
