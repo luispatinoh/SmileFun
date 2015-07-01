@@ -10,8 +10,8 @@
         <title>Smile Fun</title>
         <link rel="stylesheet" type="text/css" href="css/style.css"/>
         <script src="js/modernizr.custom.70736.js"></script>
-    <noscript><link rel="stylesheet" type="text/css" href="css/noJS.css"/></noscript>
-    <!--[if lte IE 7]><style>.main{display:none;} .support-note .note-ie{display:block;}</style><![endif]-->
+        <noscript><link rel="stylesheet" type="text/css" href="css/noJS.css"/></noscript>
+        <!--[if lte IE 7]><style>.main{display:none;} .support-note .note-ie{display:block;}</style><![endif]-->
 </head>
 <body>
     <%/*<form action="TestServlet" method="post"
@@ -21,7 +21,7 @@
          <input name="myFile2" type="file"/> <br/> <br/>
          <input value="upload" type="submit"/>
          <input type="reset"/> <br/>
-            </form>*/%>
+         </form>*/%>
     <%/*<jsp:forward page="/UsuarioController?action=listUser" />*/%>
 
     <div class="container">
@@ -47,7 +47,7 @@
                 <h1>Smile Fun</h1>
 
                 <div class="support-note">
-                    <span class="note-ie">Sorry, only modern browsers.</span>
+                    <span class="note-ie">Lo sentimos, se necesita un navegador más reciente.</span>
                 </div>
 
             </header>

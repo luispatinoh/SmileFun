@@ -58,7 +58,7 @@
                             <br/>
                             <br/>
                             <input type="text" class="pure-input-1-2" placeholder="Username" name="user">
-                            <input type="text" class="pure-input-1-2" placeholder="Password" name="password">
+                            <input type="password" class="pure-input-1-2" placeholder="Password" name="password">
                         </fieldset>
 
                         <button type="submit" class="pure-button pure-input-1-2 pure-button-primary">Ingresar</button>
