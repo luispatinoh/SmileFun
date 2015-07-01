@@ -19,22 +19,22 @@
     </script>*/%>
 
     <form method="POST" action='UsuarioController' name="frmAddUser">
-        User ID : <input type="text" readonly="readonly" name="userId"
+        User ID : <input type="text" readonly="readonly" name="userId" class="pure-input-1-2" placeholder="Id de Usuario"
             value="<c:out value="${user.userId}" />" /> <br /> 
         First Name : <input
-            type="text" name="firstName"
+            type="text" name="firstName" class="pure-input-1-2" placeholder="Nombres"
             value="<c:out value="${user.firstName}" />" /> <br /> 
         Last Name : <input
-            type="text" name="lastName"
+            type="text" name="lastName" class="pure-input-1-2" placeholder="Apellidos"
             value="<c:out value="${user.lastName}" />" /> <br /> 
         <%/*
         DOB : <input
             type="text" name="dob"
             value="<fmt:formatDate pattern="MM/dd/yyyy" value="${user.dob}" />" /> <br /> 
         */%>
-        Email : <input type="text" name="email"
+        Email : <input type="text" name="email" class="pure-input-1-2" placeholder="E-mail"
             value="<c:out value="${user.email}" />" /> <br /> <input
-            type="submit" value="Submit" />
+            type="submit" value="Aceptar" class="pure-button pure-input-1-2 pure-button-primary" />
     </form>
 </body>
 </html>
