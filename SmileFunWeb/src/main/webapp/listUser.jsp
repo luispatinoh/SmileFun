@@ -6,6 +6,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+
+<link href="css/newcss.css" rel="stylesheet" type="text/css"/>
 <title>Muestra todos los usuarios</title>
 </head>
 <body>

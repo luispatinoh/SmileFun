@@ -31,13 +31,13 @@ public class UsuarioController extends HttpServlet {
 
         if (action.equalsIgnoreCase("delete")){
             int userId = Integer.parseInt(request.getParameter("userId"));
-            dao.borrar(userId);
+            dao.borrarUsuario(userId);
             forward = LIST_USER;
             request.setAttribute("users", dao.listaUsuarios());    
         } else if (action.equalsIgnoreCase("edit")){
             forward = INSERT_OR_EDIT;
             int userId = Integer.parseInt(request.getParameter("userId"));
-            UsuarioPO user = dao.get(userId);
+            UsuarioPO user = dao.getUsuario(userId);
             request.setAttribute("user", user);
         } else if (action.equalsIgnoreCase("listUser")){
             forward = LIST_USER;
@@ -64,12 +64,12 @@ public class UsuarioController extends HttpServlet {
         String userid = request.getParameter("userId");
         if(userid == null || userid.isEmpty())
         {
-            dao.insertar(user);
+            dao.insertarUsuario(user);
         }
         else
         {
             user.setUserId(Integer.parseInt(userid));
-            dao.actualizar(user);
+            dao.actualizarUsuario(user);
         }
         RequestDispatcher view = request.getRequestDispatcher(LIST_USER);
         request.setAttribute("users", dao.listaUsuarios());
