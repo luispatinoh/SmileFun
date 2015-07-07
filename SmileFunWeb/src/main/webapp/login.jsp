@@ -57,9 +57,13 @@
                             <label>Ingrese sus datos</label>
                             <br/>
                             <%  String usuario = (String) request.getAttribute("user");
-                                if (usuario.isEmpty() || usuario == null) {%>
-                                <span class="note-ie"><%= (request.getAttribute("str_MsgLogin")); %></span>
-                                <%}%>
+                                try {
+                                    if (usuario.isEmpty()) {%>
+                                <span class="note-ie"><%= (request.getAttribute("str_MsgLogin")) %></span>
+                                <%}
+                                } catch(Exception e) {
+                                }
+                            %>
                             <br/>
                             <input type="text" class="pure-input-1-2" placeholder="Username" name="user">
                             <input type="password" class="pure-input-1-2" placeholder="Password" name="password">
