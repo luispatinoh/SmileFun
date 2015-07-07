@@ -16,6 +16,7 @@ public class LoginController extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
     private static String LOGIN_CORRECTO = "/principal.jsp";
+    private static String LOGIN_INCORRECTO = "/login.jsp";
     private LoginDAO dao;
 
     public LoginController() {
@@ -25,21 +26,15 @@ public class LoginController extends HttpServlet {
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-        try {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet LoginController</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet LoginController at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        } finally {
-            out.close();
+        String usuario = (String) request.getAttribute("user");
+        
+        if (usuario.isEmpty() || usuario == null) {
+            RequestDispatcher view = request.getRequestDispatcher(LOGIN_INCORRECTO);
+            view.forward(request, response);
+        }
+        else {
+            RequestDispatcher view = request.getRequestDispatcher(LOGIN_CORRECTO);
+            view.forward(request, response);
         }
     }
 
@@ -72,6 +67,7 @@ public class LoginController extends HttpServlet {
             view.forward(request, response);
         }
         else {
+            request.setAttribute("str_MsgLogin", "Usuario o contraseña incorrecta");
             processRequest(request, response);
         }
     }

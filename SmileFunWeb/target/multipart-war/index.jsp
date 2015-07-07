@@ -23,7 +23,7 @@
          <input type="reset"/> <br/>
          </form>*/%>
     <%/*<jsp:forward page="/UsuarioController?action=listUser" />*/%>
-
+    <h1>www.javatpoint.com/servlet-http-session-login-and-logout-example</h1>
     <div class="container">
 
         <div class="main">
@@ -48,6 +48,11 @@
 
                 <div class="support-note">
                     <span class="note-ie">Lo sentimos, se necesita un navegador más reciente.</span>
+                </div>
+                
+                <div class="">
+                    <p>Comparte tu vida en fotos!!!</p>
+                    <p>Registra cada momento especial!!!</p>
                 </div>
 
             </header>
@@ -303,6 +308,6 @@
 
         });
 
-    </script>	
+    </script>
 </body>
 </html>
