@@ -27,14 +27,16 @@ public class LoginController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String usuario = (String) request.getAttribute("user");
-        
-        if (usuario.isEmpty() || usuario == null) {
-            RequestDispatcher view = request.getRequestDispatcher(LOGIN_INCORRECTO);
-            view.forward(request, response);
-        }
-        else {
-            RequestDispatcher view = request.getRequestDispatcher(LOGIN_CORRECTO);
-            view.forward(request, response);
+        try {
+            if (usuario.isEmpty()) {
+                RequestDispatcher view = request.getRequestDispatcher(LOGIN_INCORRECTO);
+                view.forward(request, response);
+            }
+            else {
+                RequestDispatcher view = request.getRequestDispatcher(LOGIN_CORRECTO);
+                view.forward(request, response);
+            }
+        } catch(Exception e) {
         }
     }
 

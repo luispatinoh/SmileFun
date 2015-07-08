@@ -23,7 +23,6 @@
          <input type="reset"/> <br/>
          </form>*/%>
     <%/*<jsp:forward page="/UsuarioController?action=listUser" />*/%>
-    <h1>www.javatpoint.com/servlet-http-session-login-and-logout-example</h1>
     <div class="container">
 
         <div class="main">
