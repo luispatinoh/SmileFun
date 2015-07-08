@@ -1,3 +1,4 @@
+<%@page import="org.glassfish.servlet.persistent.LoginPO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
     "http://www.w3.org/TR/html4/loose.dtd">
@@ -26,17 +27,44 @@
     <div class="container">
 
         <div class="main">
-
-
+            
+            <%  LoginPO usuario = (LoginPO) request.getAttribute("user");
+                boolean logged = false;
+                String usuarioNombre = "";
+                try {
+                    if (usuario == null) {
+                        usuarioNombre = "Usuario";
+                        logged = false;
+                    }
+                    else {
+                        usuarioNombre = usuario.getUser();
+                        logged = true;
+                    }
+                } catch(Exception e) {
+                    usuarioNombre = "Usuario";
+                    logged = false;
+                }
+            %>
+            
             <div class="pure-menu pure-menu-horizontal">
                 <ul class="pure-menu-list" style="float:right">
                     <li class="pure-menu-item pure-menu-selected">Home</li>
                     <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
-                        <a href="#" id="menuLink1" class="pure-menu-link">Usermame</a>
+                        <a href="#" id="menuLink1" class="pure-menu-link"><%= (usuarioNombre)%></a>
+                        <% if (logged) { %>
                         <ul class="pure-menu-children">
-                            <li class="pure-menu-item"><a href="#" class="pure-menu-link">My Profile</a></li>
-                            <li class="pure-menu-item"><a href="#" class="pure-menu-link">Logout</a></li>                
+                            <li class="pure-menu-item"><a href="principal.jsp" class="pure-menu-link">My Profile</a></li>
+                            <li class="pure-menu-item"><a href="LogoutServlet" class="pure-menu-link">Logout</a></li>                
                         </ul>
+                        <%
+                            } else {
+                        %>
+                        <ul class="pure-menu-children">
+                            <li class="pure-menu-item"><a href="login.jsp" class="pure-menu-link">Log in</a></li>
+                        </ul>
+                        <%
+                            }
+                        %>
                     </li>
                 </ul>
             </div>

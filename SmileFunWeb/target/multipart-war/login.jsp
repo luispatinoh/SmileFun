@@ -1,3 +1,4 @@
+<%@page import="org.glassfish.servlet.persistent.LoginPO"%>
 <%@page contentType="text/html" pageEncoding="windows-1252"%>
 <!DOCTYPE html>
 <html>
@@ -56,9 +57,9 @@
                         <fieldset class="pure-group">
                             <label>Ingrese sus datos</label>
                             <br/>
-                            <%  String usuario = (String) request.getAttribute("user");
+                            <%  LoginPO usuario = (LoginPO) request.getAttribute("user");
                                 try {
-                                    if (usuario.isEmpty()) {%>
+                                    if (usuario == null) {%>
                                 <span class="note-ie"><%= (request.getAttribute("str_MsgLogin")) %></span>
                                 <%}
                                 } catch(Exception e) {
