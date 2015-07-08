@@ -19,7 +19,7 @@ import org.glassfish.servlet.persistent.UsuarioPO;
 public class AmigoController extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
-    //private final static String INSERT_OR_EDIT = "/user.jsp";
+    private final static String INSERT_OR_EDIT = "/addAmigo.jsp";
     private final static String LIST_AMIGO = "/listAmigo.jsp";
     private AmigoBO amigoBO;
     
@@ -59,26 +59,26 @@ public class AmigoController extends HttpServlet {
         String action = request.getParameter("action");
 
         if (action.equalsIgnoreCase("delete")){
-            /*int userId = Integer.parseInt(request.getParameter("userId"));
-            dao.borrarUsuario(userId);
-            forward = LIST_AMIGO;
-            request.setAttribute("users", dao.listaUsuarios());*/
-        } else if (action.equalsIgnoreCase("edit")){
-            /*forward = INSERT_OR_EDIT;
             int userId = Integer.parseInt(request.getParameter("userId"));
-            UsuarioPO user = dao.getUsuario(userId);
-            request.setAttribute("user", user);*/
+            //dao.borrarUsuario(userId);
+            forward = LIST_AMIGO;
+            //request.setAttribute("users", dao.listaUsuarios());
+        } else if (action.equalsIgnoreCase("edit")){
+            forward = INSERT_OR_EDIT;
+            int userId = Integer.parseInt(request.getParameter("userId"));
+            //UsuarioPO user = dao.getUsuario(userId);
+            //request.setAttribute("user", user);
         } else if (action.equalsIgnoreCase("listAmigo")){
             forward = LIST_AMIGO;
             HttpSession session=request.getSession();
             LoginPO usuario = (LoginPO) session.getAttribute("user");
             request.setAttribute("amigos", amigoBO.getListaAmigos(usuario.getLogId()));
         } else {
-            //forward = INSERT_OR_EDIT;
-            forward = LIST_AMIGO;
+            forward = INSERT_OR_EDIT;
             HttpSession session=request.getSession();
             LoginPO usuario = (LoginPO) session.getAttribute("user");
-            request.setAttribute("amigos", amigoBO.getListaAmigos(usuario.getLogId()));
+            if (usuario != null) request.setAttribute("amigos", amigoBO.getListaAmigos(usuario.getLogId()));
+            else request.setAttribute("amigos", new ArrayList<AmigoBO>());
         }
 
         RequestDispatcher view = request.getRequestDispatcher(forward);

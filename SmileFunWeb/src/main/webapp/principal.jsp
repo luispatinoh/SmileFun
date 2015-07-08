@@ -33,7 +33,7 @@
             <header class="clearfix">
 
                 <h1>Smile Fun</h1>
-                <h2>Bienvenido ${user}</h2>
+                <h2>Bienvenido ${user.user}</h2>
 
                 <div class="support-note">
                     <span class="note-ie">Lo sentimos, se necesita un navegador más reciente..</span>
