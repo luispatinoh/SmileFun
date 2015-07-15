@@ -21,7 +21,7 @@ public class AmigoController extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private final static String INSERT_OR_EDIT = "/addAmigo.jsp";
     private final static String LIST_AMIGO = "/listAmigo.jsp";
-    private AmigoBO amigoBO;
+    private AmigoBO amigoBO = new AmigoBO();
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -75,10 +75,10 @@ public class AmigoController extends HttpServlet {
             request.setAttribute("amigos", amigoBO.getListaAmigos(usuario.getLogId()));
         } else {
             forward = INSERT_OR_EDIT;
-            HttpSession session=request.getSession();
+            /*HttpSession session=request.getSession();
             LoginPO usuario = (LoginPO) session.getAttribute("user");
             if (usuario != null) request.setAttribute("amigos", amigoBO.getListaAmigos(usuario.getLogId()));
-            else request.setAttribute("amigos", new ArrayList<AmigoBO>());
+            else request.setAttribute("amigos", new ArrayList<AmigoBO>());*/
         }
 
         RequestDispatcher view = request.getRequestDispatcher(forward);
