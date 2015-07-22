@@ -18,11 +18,11 @@ public class UsuarioController extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private static String INSERT_OR_EDIT = "/user.jsp";
     private static String LIST_USER = "/listUser.jsp";
-    private UsuarioDAO dao;
+    private UsuarioDAO dao = new UsuarioDAO();
 
     public UsuarioController() {
         super();
-        dao = new UsuarioDAO();
+        //dao = new UsuarioDAO();
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

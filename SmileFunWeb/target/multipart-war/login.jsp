@@ -31,7 +31,7 @@
                     <ul class="pure-menu-list" style="float:right">
                         <li class="pure-menu-item pure-menu-selected">Login</li>
                         <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
-                            <a href="#" id="menuLink1" class="pure-menu-link">Usermame</a>
+                            <a href="#" id="menuLink1" class="pure-menu-link">Usuario</a>
                             <ul class="pure-menu-children">
                                 <li class="pure-menu-item"><a href="#" class="pure-menu-link">Mi perfil</a></li>
                                 <li class="pure-menu-item"><a href="#" class="pure-menu-link">Logout</a></li>                
@@ -57,7 +57,7 @@
                         <fieldset class="pure-group">
                             <label>Ingrese sus datos</label>
                             <br/>
-                            <%  LoginPO usuario = (LoginPO) request.getAttribute("user");
+                            <%  LoginPO usuario = (LoginPO) session.getAttribute("user");
                                 try {
                                     if (usuario == null) {%>
                                 <span class="note-ie"><%= (request.getAttribute("str_MsgLogin")) %></span>

@@ -28,7 +28,7 @@
 
         <div class="main">
             
-            <%  LoginPO usuario = (LoginPO) request.getAttribute("user");
+            <%  LoginPO usuario = (LoginPO) session.getAttribute("user");
                 boolean logged = false;
                 String usuarioNombre = "";
                 try {

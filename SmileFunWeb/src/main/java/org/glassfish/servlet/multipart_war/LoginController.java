@@ -18,11 +18,11 @@ public class LoginController extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private final static String LOGIN_CORRECTO = "/principal.jsp";
     private final static String LOGIN_INCORRECTO = "/login.jsp";
-    private final LoginDAO dao;
+    private final LoginDAO dao = new LoginDAO();;
 
     public LoginController() {
         super();
-        dao = new LoginDAO();
+        //dao = new LoginDAO();
     }
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -39,7 +39,7 @@ public class LoginController extends HttpServlet {
                 view.forward(request, response);
             }
         } catch(Exception e) {
-            RequestDispatcher view = request.getRequestDispatcher(LOGIN_CORRECTO);
+            RequestDispatcher view = request.getRequestDispatcher(LOGIN_INCORRECTO);
             view.forward(request, response);
         }
     }
