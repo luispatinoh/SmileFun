@@ -27,15 +27,42 @@
     <body>
         <div class="container">
             <div class="main">
+                <%  LoginPO usuario = (LoginPO) session.getAttribute("user");
+                    boolean logged = false;
+                    String usuarioNombre = "";
+                    try {
+                        if (usuario == null) {
+                            usuarioNombre = "Usuario";
+                            logged = false;
+                        } else {
+                            usuarioNombre = usuario.getUser();
+                            logged = true;
+                        }
+                    } catch (Exception e) {
+                        usuarioNombre = "Usuario";
+                        logged = false;
+                    }
+                %>
+
                 <div class="pure-menu pure-menu-horizontal">
                     <ul class="pure-menu-list" style="float:right">
-                        <li class="pure-menu-item pure-menu-selected">Login</li>
+                        <li class="pure-menu-item pure-menu-selected"><a href="index.jsp" class="pure-menu-link">Home</a></li>
                         <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
-                            <a href="#" id="menuLink1" class="pure-menu-link">Usuario</a>
+                            <% if (logged) {%>
                             <ul class="pure-menu-children">
-                                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Mi perfil</a></li>
-                                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Logout</a></li>                
+                                <li class="pure-menu-item"><a href="user.jsp" id="menuLink1" class="pure-menu-link"><%= (usuarioNombre)%></a></li>
+                                <li class="pure-menu-item"><a href="principal.jsp" class="pure-menu-link">Mi Perfil</a></li>
+                                <li class="pure-menu-item"><a href="LogoutServlet" class="pure-menu-link">Logout</a></li>                
                             </ul>
+                            <%
+                            } else {
+                            %>
+                            <ul class="pure-menu-children">
+                                <li class="pure-menu-item"><a href="login.jsp" class="pure-menu-link">Log in</a></li>
+                            </ul>
+                            <%
+                                }
+                            %>
                         </li>
                     </ul>
                 </div>
@@ -57,12 +84,12 @@
                         <fieldset class="pure-group">
                             <label>Ingrese sus datos</label>
                             <br/>
-                            <%  LoginPO usuario = (LoginPO) session.getAttribute("user");
+                            <%  usuario = (LoginPO) session.getAttribute("user");
                                 try {
                                     if (usuario == null) {%>
-                                <span class="note-ie"><%= (request.getAttribute("str_MsgLogin")) %></span>
-                                <%}
-                                } catch(Exception e) {
+                            <span class="note-ie"><%= (request.getAttribute("str_MsgLogin") == null ? "" : (request.getAttribute("str_MsgLogin")))%></span>
+                            <%}
+                                } catch (Exception e) {
                                 }
                             %>
                             <br/>

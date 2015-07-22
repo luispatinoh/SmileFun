@@ -48,12 +48,12 @@
             
             <div class="pure-menu pure-menu-horizontal">
                 <ul class="pure-menu-list" style="float:right">
-                    <li class="pure-menu-item pure-menu-selected">Home</li>
+                    <li class="pure-menu-item pure-menu-selected"><a href="index.jsp" class="pure-menu-link">Home</a></li>
                     <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
-                        <a href="#" id="menuLink1" class="pure-menu-link"><%= (usuarioNombre)%></a>
                         <% if (logged) { %>
                         <ul class="pure-menu-children">
-                            <li class="pure-menu-item"><a href="principal.jsp" class="pure-menu-link">My Profile</a></li>
+                            <li class="pure-menu-item"><a href="user.jsp" id="menuLink1" class="pure-menu-link"><%= (usuarioNombre)%></a></li>
+                            <li class="pure-menu-item"><a href="principal.jsp" class="pure-menu-link">Mi Perfil</a></li>
                             <li class="pure-menu-item"><a href="LogoutServlet" class="pure-menu-link">Logout</a></li>                
                         </ul>
                         <%

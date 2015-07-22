@@ -1,8 +1,9 @@
 org\glassfish\servlet\multipart_war\HelloWorld.class
+org\glassfish\servlet\business\UsuarioBO.class
 org\glassfish\servlet\multipart_war\LogoutServlet.class
 org\glassfish\servlet\multipart_war\TestServlet.class
-org\glassfish\servlet\business\AmigoBO.class
 org\glassfish\servlet\multipart_war\AmigoController.class
+org\glassfish\servlet\business\AmigoBO.class
 org\glassfish\servlet\multipart_war\ProfileServlet.class
 org\glassfish\servlet\multipart_war\UsuarioController.class
 org\glassfish\servlet\multipart_war\LoginController.class
